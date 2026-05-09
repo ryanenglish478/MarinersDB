@@ -1,1 +1,0 @@
-Personal Project to make a dashboard that interacts with a database that allows the user to look at Mariners batter statistics

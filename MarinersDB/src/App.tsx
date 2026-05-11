@@ -40,6 +40,7 @@ function App() {
       <header className="dashboard-header">
         <h1>Mariners 2025</h1>
         <p>Source: Neon PostgreSQL DB</p>
+        <p>Made by Ryan English</p>
       </header>
 
       {/* PITCHERS SECTION */}

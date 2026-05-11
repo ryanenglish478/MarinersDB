@@ -4,7 +4,9 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use(cors()); // Allows React to talk to this server
+app.use(cors({
+  origin: "*", // Allow all origins (for development)
+})); 
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,

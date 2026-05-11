@@ -1,65 +1,142 @@
-/* Container for the whole dashboard */
+/* GLOBAL SETTINGS */
+:root {
+  --mariners-navy: #001C43;
+  --mariners-teal: #005C5C;
+  --mariners-silver: #C4CED4;
+  --status-green: #00ff00;
+}
+
 .dashboard-container {
   padding: 20px;
-  background-color: #001C43; /* Mariners Navy */
+  background-color: var(--mariners-navy);
   min-height: 100vh;
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header styling */
+/* HEADER & SECTIONS */
 .dashboard-header {
-  color: #005C5C; /* Mariners Teal */
-  border-bottom: 2px solid #005C5C;
-  margin-bottom: 20px;
+  color: var(--mariners-teal);
+  border-bottom: 2px solid var(--mariners-teal);
+  margin-bottom: 30px;
   padding-bottom: 10px;
 }
 
-/* Grid layout for the fleet cards */
-.fleet-grid {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.player-section {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
 }
 
-/* Individual Player/Robot Card */
+.section-label {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: var(--mariners-silver);
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status-indicator {
+  height: 10px;
+  width: 10px;
+  background-color: var(--status-green);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  box-shadow: 0 0 8px var(--status-green);
+}
+
+/* GRID & CARDS */
+.player-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
 .player-card {
   display: flex;
   justify-content: space-between;
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 4px;
-  border-left: 4px solid #005C5C;
-  transition: transform 0.2s;
+  border-left: 4px solid var(--mariners-teal);
+  transition: all 0.2s ease;
 }
 
 .player-card:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateX(5px);
+  border-left-color: var(--status-green);
+}
+
+/* PLAYER INFO SECTION (LEFT SIDE) */
+.player-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: 15px;
+  min-width: 160px;
 }
 
 .player-name {
   font-weight: bold;
   font-size: 1.1rem;
+  color: #FFFFFF;
   display: block;
 }
 
 .player-meta {
-  color: #C4CED4;
-  font-size: 0.8rem;
+  color: var(--mariners-teal);
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* STATS DISPLAY SECTION (RIGHT SIDE) */
+.stats-display {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  padding-left: 15px;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 45px;
+}
+
+.stat-box small {
+  color: var(--mariners-silver);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.stat-box span {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--status-green);
 }
 
 .status-badge {
-  background-color: #005C5C;
+  background-color: var(--mariners-teal);
   color: white;
   padding: 2px 8px;
   border-radius: 10px;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
-}
-
-.stat-value {
   margin-top: 5px;
-  font-weight: bold;
-  font-size: 1.2rem;
+  display: inline-block;
 }

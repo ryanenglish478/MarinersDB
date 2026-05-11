@@ -12,7 +12,7 @@ const pool = new Pool({
 
 app.get('/api/players', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM player_stats ORDER BY pos_group DESC');
+    const result = await pool.query('SELECT * FROM public.player_stats ORDER BY pos_group DESC');
     res.json(result.rows);
   } catch (err) {
     console.error(err);

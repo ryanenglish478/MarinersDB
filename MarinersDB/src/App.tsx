@@ -17,7 +17,7 @@ function App() {
   const [roster, setRoster] = useState<Player[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/players')
+    fetch('https://ryanenglishmarinersdb.onrender.com/api/players')
       .then(res => {
         if (!res.ok) throw new Error("Network response error");
         return res.json();

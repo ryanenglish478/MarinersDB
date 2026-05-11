@@ -39,7 +39,7 @@ function App() {
     <div className="dashboard-container">
       <header className="dashboard-header">
         <h1>Mariners 2025</h1>
-        <p>Source: Local PostgreSQL Database</p>
+        <p>Source: Neon PostgreSQL DB</p>
       </header>
 
       {/* PITCHERS SECTION */}

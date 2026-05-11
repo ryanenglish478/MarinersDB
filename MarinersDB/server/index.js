@@ -9,7 +9,7 @@ const pool = new Pool({
   user: 'postgres',           // Default user
   host: 'localhost',
   database: 'MarinersDB',
-  password: 'optixmagseries', // The password you set in pgAdmin
+  password: 'optixmagseries', 
   port: 5432,
 });
 

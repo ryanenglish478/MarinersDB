@@ -1,16 +1,13 @@
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 app.use(cors()); // Allows React to talk to this server
 
 const pool = new Pool({
-  user: 'postgres',           // Default user
-  host: 'localhost',
-  database: 'MarinersDB',
-  password: 'optixmagseries', 
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
 });
 
 app.get('/api/players', async (req, res) => {
